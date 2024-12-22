@@ -57,7 +57,7 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        NavButton: ({ dir }) => dir === 'previous' 
+        NavigationButton: ({ dir }: { dir: 'previous' | 'next' }) => dir === 'previous' 
           ? <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 hover:scale-110" />
           : <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 hover:scale-110" />
       }}
