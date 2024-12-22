@@ -57,8 +57,9 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: () => <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 hover:scale-110" />,
-        IconRight: () => <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 hover:scale-110" />,
+        NavButton: ({ dir }) => dir === 'previous' 
+          ? <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 hover:scale-110" />
+          : <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 hover:scale-110" />
       }}
       {...props}
     />
