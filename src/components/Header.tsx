@@ -1,45 +1,69 @@
-import { Button } from "../components/ui/button";
-import { Input } from "./ui/input";
+import { motion } from "framer-motion"
 
 export default function Header() {
+  const navItems = ["about", "services", "contact"]
+
   return (
-    <header className="bg-[#1e6e41] text-white py-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-6">
-        {/* Logo */}
-        <img 
-          src="/logo1.png" 
-          alt="Avenue5 Logo" 
-          className="h-12 mr-12"  /* Adjust the height (h-12) as per your need */
-        />
-
-        {/* Navigation */}
-        <nav className="flex space-x-8 text-lg font-medium">
-          {['ABOUT', 'PROPERTIES', 'PROJECTS', 'BLOG', 'CAREERS', 'CONTACT'].map((item, idx) => (
-            <a
-              key={idx}
-              href={`/${item.toLowerCase()}`}
-              className="hover:text-yellow-300 transition-colors duration-300"
-            >
-              {item}
-            </a>
-          ))}
-        </nav>
-
-        {/* Search and Button */}
-        <div className="flex items-center space-x-4 ml-12">
-          <Input
-            type="text"
-            placeholder="Property ID"
-            className="w-40 bg-white text-black py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all duration-300"
+    <motion.header 
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
+      className="container mx-auto px-4 py-6 backdrop-blur-sm bg-black/50 sticky top-0 z-50"
+    >
+      <div className="flex justify-between items-center">
+        <motion.div 
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          whileHover={{ scale: 1.05 }}
+          className="text-white text-2xl font-bold relative group"
+        >
+          <span className="relative z-10">Sheryar Kayani</span>
+          <motion.div 
+            className="absolute bottom-0 left-0 h-[2px] bg-purple-500"
+            initial={{ width: "0%" }}
+            whileHover={{ width: "100%" }}
+            transition={{ duration: 0.3 }}
           />
-          <Button
-            variant="outline"
-            className="bg-[#2e8b57] text-white hover:bg-[#236e44] px-4 py-2 rounded-md transition-all duration-300 shadow-md"
+        </motion.div>
+
+        <nav>
+          <motion.ul 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3, staggerChildren: 0.1 }}
+            className="flex space-x-8"
           >
-            SEND INQUIRY
-          </Button>
-        </div>
+            {navItems.map((item, index) => (
+              <motion.li
+                key={item}
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 + index * 0.1 }}
+                whileHover={{ y: -2 }}
+              >
+                <motion.a
+                  href={`#${item}`}
+                  className="text-gray-300 hover:text-white transition-colors relative group"
+                  whileHover="hover"
+                >
+                  <span className="capitalize">{item}</span>
+                  <motion.span
+                    className="absolute -bottom-1 left-0 w-full h-[2px] bg-purple-500 origin-left"
+                    initial={{ scaleX: 0 }}
+                    variants={{
+                      hover: {
+                        scaleX: 1,
+                        transition: { duration: 0.3 }
+                      }
+                    }}
+                  />
+                </motion.a>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </nav>
       </div>
-    </header>
-  );
+    </motion.header>
+  )
 }
