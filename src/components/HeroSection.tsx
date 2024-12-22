@@ -1,6 +1,6 @@
 import { Button } from "./ui/button"
 import { CheckCircle } from 'lucide-react'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function HeroSection() {
   return (
