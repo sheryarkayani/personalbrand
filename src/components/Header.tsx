@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 
 export default function Header() {
-  const navItems = ["about", "services", "contact"]
+  const navItems = ["about", "services", "booking"]
 
   return (
     <motion.header 

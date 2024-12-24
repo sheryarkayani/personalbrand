@@ -121,16 +121,18 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button 
-                  size="lg" 
-                  className="bg-[#9333EA] hover:bg-[#7928CA] text-white px-6 md:px-8 py-6 md:py-7 text-base md:text-lg rounded-xl
-                    shadow-[0_0_20px_rgba(147,51,234,0.3)] 
-                    hover:shadow-[0_0_30px_rgba(147,51,234,0.5)]
-                    transition-all duration-300 ease-out
-                    hover:rotate-1"
-                >
-                  Book Your Free Strategy Call
-                </Button>
+                <a href="#booking">
+                  <Button 
+                    size="lg" 
+                    className="bg-[#9333EA] hover:bg-[#7928CA] text-white px-6 md:px-8 py-6 md:py-7 text-base md:text-lg rounded-xl
+                      shadow-[0_0_20px_rgba(147,51,234,0.3)] 
+                      hover:shadow-[0_0_30px_rgba(147,51,234,0.5)]
+                      transition-all duration-300 ease-out
+                      hover:rotate-1"
+                  >
+                    Book Your Free Strategy Call
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
           </motion.div>

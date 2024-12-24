@@ -37,7 +37,9 @@ export default function ServicesSection() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
+        duration: 0.5,
+        type: "spring",
+        stiffness: 100
       }
     }
   }
@@ -61,7 +63,7 @@ export default function ServicesSection() {
       >
         {services.map((service, index) => (
           <motion.div key={index} variants={cardVariants}>
-            <Card className="bg-purple-900/50 border-purple-700 transform transition-all duration-300 hover:scale-105 hover:bg-purple-900/70">
+            <Card className="bg-purple-900/50 border-purple-700 transform transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:shadow-lg hover:shadow-purple-500/50">
               <CardContent className="p-6 space-y-4">
                 <h3 className="text-xl font-bold text-white">{service.title}</h3>
                 <p className="text-gray-300">{service.description}</p>
