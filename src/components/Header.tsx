@@ -8,7 +8,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
-      className="container mx-auto px-4 py-6 backdrop-blur-sm bg-black/50 sticky top-0 z-50"
+      className="container mx-auto px-4 py-6 backdrop-blur-sm bg-gradient-to-r from-black via-gray-900 to-black sticky top-0 z-50"
     >
       <div className="flex justify-between items-center">
         <motion.div 

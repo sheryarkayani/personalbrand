@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function HeroSection() {
   return (
-    <section className="container mx-auto px-4 relative overflow-hidden">
+    <section className="container mx-auto px-4 relative overflow-hidden flex items-center justify-center min-h-screen">
       {/* Enhanced background effects */}
       <motion.div 
         className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"
@@ -34,7 +34,7 @@ export default function HeroSection() {
       />
 
       <div className="min-h-[80vh] flex items-center relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full max-w-6xl mx-auto">
           <motion.div 
             className="space-y-8 max-w-2xl"
             initial={{ opacity: 0, x: -100 }}
