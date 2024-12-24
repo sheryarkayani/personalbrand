@@ -40,6 +40,16 @@ export default function BookingSection() {
           </motion.p>
         </motion.div>
         <BookingForm />
+        <div
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/sheryarkayani70/30min?background_color=3d135e&text_color=ffffff&primary_color=9333ea"
+          style={{ minWidth: '320px', height: '700px' }}
+        ></div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
       </motion.div>
     </section>
   )
